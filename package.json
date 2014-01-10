@@ -1,0 +1,7 @@
+{
+  "name": "grunt-lab",
+  "version": "0.0.0",
+  "description": "Lab for learning Grunt.",
+  "author": "Anders Janmyr <anders@janmyr.com> (http://anders.janmyr.com/)",
+  "license": "ISC"
+}
