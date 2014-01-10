@@ -3,6 +3,6 @@
     var model = window.model;
     var view = window.view;
 
-    model
+    console.log(model, view);
 
-}());
+}(window));

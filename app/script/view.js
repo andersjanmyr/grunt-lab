@@ -1,5 +1,6 @@
 (function(window) {
     'use strict';
-    window.model = {
+    window.view = {
     };
 }(window));
+
