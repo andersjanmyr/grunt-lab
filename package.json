@@ -3,5 +3,9 @@
   "version": "0.0.0",
   "description": "Lab for learning Grunt.",
   "author": "Anders Janmyr <anders@janmyr.com> (http://anders.janmyr.com/)",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "~1.2.8",
+    "grunt": "~0.4.2"
+  }
 }
