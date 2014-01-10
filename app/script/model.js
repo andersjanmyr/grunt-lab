@@ -1,5 +1,5 @@
 
-window.Model = function(moment) {
+window.model = function(moment) {
     'use strict';
 
     function Age(birthDate) {
