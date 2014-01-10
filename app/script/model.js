@@ -1,5 +1,21 @@
-(function(window) {
+
+window.Model = function(moment) {
     'use strict';
-    window.model = {
+
+    function Age(birthDate) {
+        this.birthDate = moment(birthDate);
+    }
+
+    Age.prototype.birthDate = function birthDate() {
+        return this.birthDate;
     };
-}(window));
+
+    Age.prototype.born = function born() {
+        return this.birthDate.fromNow();
+    };
+
+    return {
+        Age: Age
+    };
+
+};

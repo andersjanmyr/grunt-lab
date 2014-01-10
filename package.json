@@ -26,6 +26,7 @@
     "browser": true,
     "jquery": true,
     "globals": {
+      "moment": true,
       "before": true,
       "describe": true,
       "expect": true,

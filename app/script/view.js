@@ -1,6 +1,6 @@
-(function(window) {
+window.View = function(model) {
     'use strict';
-    window.view = {
-    };
-}(window));
+
+    this.model = model;
+};
 
