@@ -36,5 +36,17 @@
   "devDependencies": {
     "bower": "~1.2.8",
     "grunt": "~0.4.2"
+    "matchdep": "",
+    "grunt-contrib-jshint": "",
+    "grunt-contrib-less": "",
+    "grunt-contrib-copy": "",
+    "grunt-contrib-clean": "",
+    "grunt-contrib-watch": "",
+    "grunt-express-server": "",
+    "grunt-contrib-cssmin": "",
+    "grunt-usemin": "",
+    "grunt-filerev": "",
+    "grunt-contrib-concat": "",
+    "grunt-contrib-uglify": "",
   }
 }
