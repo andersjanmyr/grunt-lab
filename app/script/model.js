@@ -6,12 +6,8 @@ window.model = function(moment) {
         this.birthDate = moment(birthDate);
     }
 
-    Age.prototype.birthDate = function birthDate() {
+    Age.prototype.born = function birthDate() {
         return this.birthDate;
-    };
-
-    Age.prototype.born = function born() {
-        return this.birthDate.fromNow();
     };
 
     var eventRoot = $(document);

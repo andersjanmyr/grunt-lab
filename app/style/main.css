@@ -1,8 +1,22 @@
 body {
+  font-family: 'Comic Sans MS' cursive sans-serif;
   text-align: center;
 }
-#content {
-  font-family: 'Comic Sans MS' cursive sans-serif;
+
+h1 {
   font-size: 64pt;
+  color: red;
+}
+
+#content {
+  font-size: 48pt;
+}
+#fromNow {
   color: purple;
+}
+#week {
+  color: green;
+}
+#utc {
+  color: blue;
 }

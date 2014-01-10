@@ -5,15 +5,21 @@ window.view = function(model) {
 
     var age;
 
-    var $age = $('#age');
-    var $birthDate = $('#birthdate');
+    var $date = $('#date');
+    var $utc = $('#utc');
+    var $week = $('#week');
+    var $seconds = $('#seconds');
+    var $fromNow = $('#fromNow');
 
-    $birthDate.on('change', function() {
+    $date.on('change', function() {
         age && age.stop();
-        age = new Age($birthDate.val());
-        console.log(age);
+        age = new Age($date.val());
         age.on('second', function() {
-            $age.text(age.born());
+            var date = age.born();
+            $utc.text(date.utc());
+            $week.text(date.week());
+            $seconds.text(moment().diff(date, 'seconds'));
+            $fromNow.text(date.fromNow());
         });
         age.start();
     })
