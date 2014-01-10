@@ -1,8 +1,7 @@
-(function(window) {
+$(function() {
     'use strict';
     var model = window.model(moment);
+    console.log(model);
     var view = window.view(model);
-
-    console.log(model, view);
-
-}(window));
+    console.log(view);
+});

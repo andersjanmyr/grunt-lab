@@ -8,6 +8,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "momentjs": "~2.5.0"
+    "momentjs": "~2.5.0",
+    "jquery": "~2.0.3",
+    "underscore": "~1.5.2"
   }
 }
