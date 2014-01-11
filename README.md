@@ -20,9 +20,18 @@ $ bower install
 1. Open Gruntfile.js
 2. Replace CSS files with less and configure a `less:dev`-target using `grunt-contrib-less`
 3. Add a watch target that invokes the `less:dev` when less files changes.
-3. Concatenate the Javascript files using `useminPrepare` and `concat`
-4. Copy images to dist
-5. Hash all assets (CSS, Javascript, and images) using `filrev`
-6. 
+4. Concatenate the Javascript files using `useminPrepare` and `concat`
+5. Copy images to dist
+6. Hash all assets (CSS, Javascript, and images) using `filrev`
+7. Replace the URL:s in the HTML files and the CSS files with `usemin`
 
+## Require.js
+
+1. Change the Javascript-files to use Require.js instead.
+2. Minify the newly created file using `grunt-contrib-requirejs` .
+
+## Karma
+
+1. Configure Karma to run the tests
+2. Configure Grunt to watch files and run tests.
 
