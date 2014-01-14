@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 
         // JsHint
         jshint: {
-            // jshint configuration is read from packages.json
+            // JsHint configuration is read from packages.json
             options: pkg.jshintConfig,
             all: [
                 'Gruntfile.js',
