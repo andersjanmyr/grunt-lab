@@ -18,7 +18,7 @@ $ bower install
 ## Instructions
 
 1. Open Gruntfile.js
-2. Replace CSS files with less and configure a `less:dev`-target using `grunt-contrib-less`
+2. Replace CSS files with less and configure a `less:dev`-target using `grunt-contrib-less`. `index.html` should only include one CSS-file `main.css`.
 3. Add a watch target that invokes the `less:dev` when less files changes.
 4. Concatenate the Javascript files using `useminPrepare` and `concat`
 5. Copy images to dist
