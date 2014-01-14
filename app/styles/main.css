@@ -1,6 +1,10 @@
 body {
   font-family: 'Comic Sans MS' cursive sans-serif;
   text-align: center;
+  background-image: url(../images/bower-logo.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 150px;
 }
 
 h1 {
