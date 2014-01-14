@@ -1,3 +1,5 @@
 node_modules/
 app/components/
 dist/
+app/styles/*.css
+
