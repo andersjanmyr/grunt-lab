@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 
         // JsHint
         jshint: {
-            // jshint configuration is read from packages.json
+            // JsHint configuration is read from packages.json
             options: pkg.jshintConfig,
             all: [
                 'Gruntfile.js',
@@ -21,13 +21,23 @@ module.exports = function (grunt) {
 
         // Less
         less: {
-            // less:dev creates a main.css from the less files.
             dev: {
+                expand: true,
+                cwd: 'app/styles/',
+                src: 'main.less',
+                ext: '.css',
+                dest: 'app/styles/'
             },
-
-            // less:release creates an optimized dist/app/styles/main.css
-            // from the less files
             release: {
+                expand: true,
+                cwd: 'app/styles/',
+                src: 'main.less',
+                ext: '.css',
+                dest: 'dist/app/styles/',
+                options: {
+                    compress: true
+                }
+
             }
         },
 
@@ -35,6 +45,8 @@ module.exports = function (grunt) {
         watch: {
             // watch:less invokes less:dev when less files change
             less: {
+                files: ['app/assets/styles/*.less'],
+                tasks: ['less:dev']
             }
         },
 
@@ -48,6 +60,11 @@ module.exports = function (grunt) {
         // Prepares for javascript concatenation by parsing the build:js
         // tags in app/index.html, options.dest is dist/app
         useminPrepare: {
+            html: 'app/index.html',
+            css: 'dist/app/styles/*.css',
+            options: {
+                dest: 'dist/app'
+            }
         },
 
         // Concat
@@ -73,7 +90,20 @@ module.exports = function (grunt) {
             // copy:release copies all html and image files to dist
             // preserving the structure
             release: {
-            },
+                files: [
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: 'app',
+                        src: [
+                            '**/*.{png,gif,jpg,jpeg,svg,ico}',
+                            '**/*.html',
+                            '**/*.{woff,ttf,otf}'
+                        ],
+                        dest: 'dist/app'
+                    }
+                ]
+            }
         },
 
         // Filerev
@@ -86,6 +116,13 @@ module.exports = function (grunt) {
             release: {
                 // filerev:release hashes(md5) all assets (images, js and css )
                 // in dist directory
+                files: [{
+                    src: [
+                        'dist/app/images/*.{jpg,jpeg,gif,png}',
+                        'dist/app/scripts/*.js',
+                        'dist/app/styles/*.css',
+                    ]
+                }]
             }
         },
 
@@ -94,6 +131,11 @@ module.exports = function (grunt) {
         // options.assetDirs contains the directories for finding the assets
         // according to their relative paths
         usemin: {
+            html: ['dist/app/*.html'],
+            css: ['dist/app/styles/*.css'],
+            options: {
+                assetsDirs: ['dist/app']
+            }
         }
 
     });
