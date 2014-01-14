@@ -45,7 +45,7 @@ module.exports = function (grunt) {
         watch: {
             // watch:less invokes less:dev when less files change
             less: {
-                files: ['app/assets/styles/*.less'],
+                files: ['app/styles/*.less'],
                 tasks: ['less:dev']
             }
         },
