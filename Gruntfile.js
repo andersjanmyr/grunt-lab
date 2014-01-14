@@ -132,7 +132,7 @@ module.exports = function (grunt) {
             html: ['dist/app/*.html'],
             css: ['dist/app/styles/*.css'],
             options: {
-                assetsDirs: ['dist/app']
+                assetsDirs: ['dist/app', 'dist/app/styles']
             }
         }
 
