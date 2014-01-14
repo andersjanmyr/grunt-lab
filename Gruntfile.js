@@ -61,7 +61,6 @@ module.exports = function (grunt) {
         // tags in app/index.html, options.dest is dist/app
         useminPrepare: {
             html: 'app/index.html',
-            css: 'dist/app/styles/*.css',
             options: {
                 dest: 'dist/app'
             }
@@ -118,7 +117,7 @@ module.exports = function (grunt) {
                 // in dist directory
                 files: [{
                     src: [
-                        'dist/app/images/*.{jpg,jpeg,gif,png}',
+                        'dist/app/images/*.{jpg,jpeg,gif,png,svg}',
                         'dist/app/scripts/*.js',
                         'dist/app/styles/*.css',
                     ]
