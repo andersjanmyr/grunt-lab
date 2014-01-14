@@ -1,5 +1,6 @@
 node_modules/
 app/components/
+.tmp/
 dist/
 app/styles/*.css
 
