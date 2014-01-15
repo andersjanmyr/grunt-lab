@@ -73,6 +73,8 @@ dist
 
 ## Require.js
 
+see http://www.slideshare.net/sioked/requirejs
+
 1. Change the Javascript-files to use Require.js instead.
 2. Minify the newly created file using `grunt-contrib-requirejs` .
 

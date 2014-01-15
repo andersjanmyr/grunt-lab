@@ -1,7 +1,4 @@
-$(function() {
+define(['view'], function(view) {
     'use strict';
-    var model = window.model(moment);
-    console.log(model);
-    var view = window.view(model);
-    console.log(view);
+    console.log("LOADED", view);
 });

@@ -1,5 +1,5 @@
 
-window.model = function(moment) {
+define(['jquery', 'moment'], function($, moment) {
     'use strict';
 
     function Age(birthDate) {
@@ -37,5 +37,4 @@ window.model = function(moment) {
     return {
         Age: Age
     };
-
-};
+});

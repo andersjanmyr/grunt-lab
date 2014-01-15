@@ -1,4 +1,4 @@
-window.view = function(model) {
+define(['jquery', 'model'], function($, model) {
     'use strict';
 
     var Age = model.Age;
@@ -23,7 +23,4 @@ window.view = function(model) {
         });
         age.start();
     })
-
-;
-};
-
+});

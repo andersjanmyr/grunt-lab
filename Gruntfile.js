@@ -4,7 +4,9 @@ module.exports = function (grunt) {
 
 
     var pkg = grunt.file.readJSON('package.json');
-
+    var mountFolder = function (connect, dir) {
+        return connect.static(require('path').resolve(dir));
+    };
     grunt.initConfig({
         pkg: pkg,
 
@@ -17,6 +19,30 @@ module.exports = function (grunt) {
                 'app/scripts/**/*.js',
                 'test/**/*.js'
             ]
+        },
+
+        connect: {
+            options:{
+                port: 9000,
+                hostname: 'localhost'
+            },
+            livereload: {
+                options: {
+                    middleware: function (connect) {
+                        return [
+                            // LIVE RELOAD DISABLED:
+//                            require('connect-livereload')(),
+                            mountFolder(connect, 'app')
+                        ];
+                    }
+                }
+            }
+        },
+
+        open: {
+            all: {
+                path: 'http://localhost:<%= connect.options.port%>'
+            }
         },
 
         // Less
@@ -47,6 +73,14 @@ module.exports = function (grunt) {
             less: {
                 files: ['app/styles/*.less'],
                 tasks: ['less:dev']
+            },
+            livereload: {
+                files: [
+                    'app/*.html',
+                    'app/styles/{,*/}*.css',
+                    'app/scripts/{,*/}*.js',
+                    'app/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+                ]
             }
         },
 
@@ -118,7 +152,7 @@ module.exports = function (grunt) {
                     src: [
                         'dist/app/images/*.{jpg,jpeg,gif,png,svg}',
                         'dist/app/scripts/*.js',
-                        'dist/app/styles/*.css',
+                        'dist/app/styles/*.css'
                     ]
                 }]
             }
@@ -143,6 +177,14 @@ module.exports = function (grunt) {
         'jshint',
         'less:dev'
     ]);
+
+    grunt.registerTask('preview',[
+        'less:dev',
+        'connect:livereload',
+        'open',
+        'watch'
+    ]);
+
 
     // Invoked with grunt release, creates a release structure
     grunt.registerTask('release', 'Creates a release in /dist', [
