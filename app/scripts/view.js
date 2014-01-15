@@ -1,4 +1,4 @@
-define(['jquery', 'model'], function($, model) {
+define(['jquery', 'moment', 'model'], function($, moment, model) {
     'use strict';
 
     var Age = model.Age;
@@ -22,5 +22,5 @@ define(['jquery', 'model'], function($, model) {
             $fromNow.text(date.fromNow());
         });
         age.start();
-    })
+    });
 });

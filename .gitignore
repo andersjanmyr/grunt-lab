@@ -3,4 +3,4 @@ app/components/
 .tmp/
 dist/
 app/styles/*.css
-
+.idea/
