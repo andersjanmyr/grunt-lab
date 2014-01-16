@@ -23,6 +23,18 @@ module.exports = function (grunt) {
             ]
         },
 
+        requirejs: {
+            compile: {
+                options: {
+                    mainConfigFile: "app/app.js",
+                    baseUrl: "app/scripts",
+                    name: "../app",
+                    optimize: 'none',
+                    out: "dist/app/app.js"
+                }
+            }
+        },
+
         connect: {
             options:{
                 port: 9000,
@@ -131,6 +143,7 @@ module.exports = function (grunt) {
                         dot: true,
                         cwd: 'app',
                         src: [
+                            'components/requirejs/require.js',
                             'images/*.{png,gif,jpg,jpeg,svg,ico}',
                             '*.html'
                         ],
@@ -197,6 +210,7 @@ module.exports = function (grunt) {
         'concat',
         'uglify',
         'copy',
+        'requirejs',
         'filerev',
         'usemin'
     ]);
