@@ -74,6 +74,8 @@ dist
 6. Copy images and html files to `dist`
 7. Hash all assets (CSS, Javascript, and images) in `dist` using `filrev`
 8. Replace the URL:s in the HTML files and the CSS files with `usemin`
+  - Add build:js comments in index.html
+  - Configure usemin to replace references in index.html and main.css
 
 ## Require.js
 
