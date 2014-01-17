@@ -10,7 +10,9 @@ window.view = function(model) {
     var $week = $('#week');
     var $seconds = $('#seconds');
     var $fromNow = $('#fromNow');
-
+    $('form').submit(function() {
+        return false;
+    });
     $date.on('change', function() {
         age && age.stop();
         age = new Age($date.val());
