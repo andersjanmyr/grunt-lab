@@ -59,11 +59,15 @@ dist
 ## Detailed Instructions
 
 1. Open Gruntfile.js
-2. Replace CSS files with less and configure a `less:dev`-target using
-   `grunt-contrib-less`. `index.html` should only include one CSS-file `main.css`.
-3. Add a watch target, `watch:less` which invokes `less:dev` when less files
+2. Replace CSS files with less
+  - Change file extension from `.css` to `.less`, Less is a superset of CSS.
+  - Tell .gitignore to ignore css files
+  - Inside `styles/main.less`, `@import "images.less"`
+  - Change `index.html` to only include one CSS-file `main.css`.
+3. Configure  target `less:dev` using `grunt-contrib-less`.
+4. Add a watch target, `watch:less` which invokes `less:dev` when less files
    changes.
-4. Add a `less:release` target, which creates an optimized `main.css` in the
+5. Add a `less:release` target, which creates an optimized `main.css` in the
    `dist/app/styles` directory.
 5. Concatenate the Javascript files using `useminPrepare`, `concat`, and
    `uglify`.
