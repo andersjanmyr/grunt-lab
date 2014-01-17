@@ -71,10 +71,11 @@ dist
    `dist/app/styles` directory.
 5. Concatenate the Javascript files using `useminPrepare`, `concat`, and
    `uglify`.
+  - Add `build:js` comments in `index.html`, `<!-- build:js ...->`
+
 6. Copy images and html files to `dist` with `copy`.
 7. Hash all assets (CSS, Javascript, and images) in `dist` using `filerev`
 8. Replace the URL:s in the HTML files and the CSS files with `usemin`
-  - Add `build:js` comments in `index.html`, `<!-- build:js ...->`
   - Configure usemin to replace references in index.html and main.css
 
 ## Require.js
