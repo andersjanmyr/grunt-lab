@@ -153,8 +153,7 @@ module.exports = function (grunt) {
         'concat',
         'uglify',
         'copy',
-        'filerev',
-        'usemin'
+        'filerev'
     ]);
 
 };
